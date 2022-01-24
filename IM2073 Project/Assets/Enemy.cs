@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -41,15 +42,15 @@ public class Enemy : MonoBehaviour
     void FaceTarget(){
 
         Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quanternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
     }
 
     void OnDrawGizmosSelected(){
 
-        OnDrawGizmosSelected.color = Color.red;
-        OnDrawGizmosSelected.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
 
     }
 }
