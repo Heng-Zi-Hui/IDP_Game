@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
 
     public float lookRadius = 10f;
     // initiate lookSpan
+    [Range(0,360)]
+    public float lookAngle = 40f;
 
     Transform target;
     NavMeshAgent agent;
@@ -18,6 +20,8 @@ public class Enemy : MonoBehaviour
 
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+
+        // patrol around room
         
     }
 
@@ -26,15 +30,26 @@ public class Enemy : MonoBehaviour
     {
 
         float distance = Vector3.Distance(target.position, transform.position);
-
-        // if player is within eyes view span
         // if player is within look radius
         if(distance <= lookRadius){
-            agent.SetDestination(target.position);
 
-            if(distance <= agent.stoppingDistance){
-                FaceTarget();
+            // if player is within eyes view span
+            Vector3 direction = (target.position - transform.position).normalized;
+            if(Vector3.Angle(transform.forward, direction) < lookAngle/2){
+
+                if(!Physics.Raycast(transform.position, direction, distance) || distance < 0.2f){
+
+                    agent.SetDestination(target.position);
+
+                    if(distance <= agent.stoppingDistance){
+                        FaceTarget();
+                    }
+
+                }
+
             }
+
+            
         }
         
     }
@@ -51,6 +66,7 @@ public class Enemy : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+        //Gizmos.DrawLine(transform.position, Vector3.Angle(transform.forward, direction));
 
     }
 }
