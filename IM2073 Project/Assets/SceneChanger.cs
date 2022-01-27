@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public Animator transition;
+
+    public float transitionTime = 0.5f;
+
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
-/*
+
     IEnumerator LoadLevel(int levelIndex)
     {
+        transition.SetTrigger("Start");
 
-    }*/
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
+    }
 }
