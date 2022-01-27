@@ -22,6 +22,7 @@ public class DungeonCamera : MonoBehaviour
 
     void LateUpdate() {
         float desiredAngle = target.transform.eulerAngles.z;
+            
         Quaternion rotation = Quaternion.Euler(0, desiredAngle, 0);
 
         transform.position = target.transform.position - (rotation * offset);
