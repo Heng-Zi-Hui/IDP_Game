@@ -108,5 +108,6 @@ public class PlayerMovements : MonoBehaviour
     private void Jump()
     {
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        anim.SetFloat("Speed", 0);
     }
 }
