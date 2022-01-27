@@ -23,11 +23,13 @@ public class PlayerMovements : MonoBehaviour
 
     //REFERENCES
     private CharacterController controller;
+    private Animator anim;
 
     // Start is called before the first frame update
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -60,6 +62,9 @@ public class PlayerMovements : MonoBehaviour
             {
                 Run();
             }
+            else if (moveDirection == Vector3.zero){
+                Idle();
+            }
 
             moveDirection *= movespeed;
 
@@ -75,6 +80,11 @@ public class PlayerMovements : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    private void Idle()
+    {
+        anim.SetFloat("Speed", 0);
+    }
+
     private void Walk()
     {
         float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
@@ -82,6 +92,7 @@ public class PlayerMovements : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
         movespeed = walkspeed;
+        anim.SetFloat("Speed", 0.5f);
     }
 
     private void Run()
@@ -91,6 +102,7 @@ public class PlayerMovements : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
         movespeed = runspeed;
+        anim.SetFloat("Speed", 1);
     }
 
     private void Jump()
