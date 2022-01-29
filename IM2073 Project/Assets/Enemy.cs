@@ -93,8 +93,10 @@ public class Enemy : MonoBehaviour
             yield return wait;
 
             if (FieldOfViewCheck()){
-                Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-                Transform target = rangeChecks[0].transform;
+                // Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+                // Transform target = rangeChecks[0].transform;
+
+                Transform target = playerRef.transform;
                 FaceTargetAndChase(target);
             }
 
@@ -137,13 +139,15 @@ public class Enemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
-        float distance = Vector3.Distance(target.position, transform.position);
-        while(distance>=0.2f){
-            agent.SetDestination(target.position);
-            if(distance<0.2f){
-                //go back to checkpoint (reload scene)
-            }
-        }
+        agent.SetDestination(target.position);
+
+        // float distance = Vector3.Distance(target.position, transform.position);
+        // while(distance>=0.2f){
+        //     agent.SetDestination(target.position);
+        //     if(distance<0.2f){
+        //         //go back to checkpoint (reload scene)
+        //     }
+        // }
     }
 
 }
