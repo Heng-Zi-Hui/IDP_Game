@@ -17,4 +17,8 @@ public void Checkpoint(){
     //SceneManager.LoadScene(SceneManager.GetActiveScene(),buildIndex + 1);
 }
 
+public void QuitGame(){
+    Application.Quit();
+}
+
 }
