@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3_Storage Room.unity
     guid: 0ac37856c4b288244b83fc7de66cfc58
+  - enabled: 1
+    path: Assets/Scenes/4_BabyRoomAndKitchen.unity
+    guid: 9c918ac1bfc69c74c9357bfd944acbf2
+  - enabled: 1
+    path: Assets/Scenes/6_Final Room.unity
+    guid: 08fb260d8eb1ada46aa467a743208cb0
+  - enabled: 1
+    path: Assets/Scenes/7_Entrance.unity
+    guid: b057012dfcd6283408865184141eb5ee
   m_configObjects: {}
