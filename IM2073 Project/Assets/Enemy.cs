@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -70,6 +71,8 @@ public class Enemy : MonoBehaviour
     public float angle;
 
     public GameObject playerRef;
+    public GameObject patrolPoint1;
+    public GameObject patrolPoint2;
 
     public LayerMask targetMask;
     public LayerMask obstructionMask;
@@ -81,8 +84,20 @@ public class Enemy : MonoBehaviour
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
+
         StartCoroutine(FOVRoutine());
     }
+
+    // void Update(){
+
+    //     //patrol
+    //     Transform point1 = patrolPoint1.transform;
+    //     agent.SetDestination(point1.position);
+
+    //     Transform point2 = patrolPoint2.transform;
+    //     agent.SetDestination(point2.position);
+
+    // }
 
     private IEnumerator FOVRoutine()
     {
@@ -96,8 +111,12 @@ public class Enemy : MonoBehaviour
                 // Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
                 // Transform target = rangeChecks[0].transform;
 
+                this.GetComponent<EnemyPatrol_classroom>().enabled = false;//disable patrol script
                 Transform target = playerRef.transform;
                 FaceTargetAndChase(target);
+            } else {
+                Start();
+                break;
             }
 
             yield return wait;
@@ -117,6 +136,8 @@ public class Enemy : MonoBehaviour
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
+                //RaycastHit hit;
+                //!Physics.SphereCast(transform.position, radius, transform.forward, out hit, 10)
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     canSeePlayer = true;
                 else
@@ -138,6 +159,11 @@ public class Enemy : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+
+        float distance = Vector3.Distance(target.position, transform.position);
+        if(distance<=0.38){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
         agent.SetDestination(target.position);
 
