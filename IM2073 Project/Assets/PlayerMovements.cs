@@ -21,6 +21,10 @@ public class PlayerMovements : MonoBehaviour
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
 
+    public bool isWalking = false;
+    public FootStepGenerator stepGenerator;
+    public float footStepTimer;
+
     //REFERENCES
     private CharacterController controller;
     private Animator anim;
@@ -30,6 +34,7 @@ public class PlayerMovements : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        stepGenerator = GetComponent<FootStepGenerator>();
     }
 
     // Update is called once per frame
@@ -103,11 +108,33 @@ public class PlayerMovements : MonoBehaviour
 
         movespeed = runspeed;
         anim.SetFloat("Speed", 1);
+
+        if(!isWalking)
+        {
+            PlayFootSound();
+        }
     }
 
     private void Jump()
     {
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         anim.SetFloat("Speed", 0);
+    }
+
+    void PlayFootSound()
+    {
+        StartCoroutine("PlayStepSound", footStepTimer);
+    }
+
+    IEnumerator PlayStepSound(float timer)
+    {
+        var randomIndex = Random.Range(0,2);
+        stepGenerator.footStepSource.clip = stepGenerator.footStepSounds[randomIndex];
+
+        stepGenerator.footStepSource.Play();
+        isWalking = true;
+
+        yield return new WaitForSeconds(timer);
+        isWalking = false;
     }
 }
