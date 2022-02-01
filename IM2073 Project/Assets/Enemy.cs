@@ -108,6 +108,10 @@ public class Enemy : MonoBehaviour
                 // Transform target = rangeChecks[0].transform;
 
                 this.GetComponent<EnemyPatrol_Classroom>().enabled = false;//disable patrol script
+                GetComponent<AudioSource>().mute = true;
+                //AudioSource.FindGameObjectWithTag("purr").Mute();//disable purr sound
+                //AudioSource.FindGameObjectWithTag("growl").Play();//enable growl sound
+
                 Transform target = playerRef.transform;
                 FaceTargetAndChase(target);
                 //break;
