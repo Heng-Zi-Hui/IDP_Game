@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public GameObject door;
+    
+    void OnTriggerEnter(Collider other){
+
+        //if(other.CompareTag("Player")){
+            door.transform.rotation = Quaternion.Euler(0,3.55f,0);
+        //}
+
     }
+    
 }
