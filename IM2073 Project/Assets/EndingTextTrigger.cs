@@ -5,11 +5,13 @@ using UnityEngine;
 public class EndingTextTrigger : MonoBehaviour
 {
     public GameObject uiObject;
+    public GameObject dialogueObject;
 
     // Start is called before the first frame update
     void Start()
     {
         uiObject.SetActive(false);
+        dialogueObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,6 +20,7 @@ public class EndingTextTrigger : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             uiObject.SetActive(true);
+            dialogueObject.SetActive(true);
             StartCoroutine("WaitForSec");
         }
     }
@@ -26,6 +29,7 @@ public class EndingTextTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         Destroy(uiObject);
+        Destroy(dialogueObject);
         Destroy(gameObject);
     }
 }
