@@ -69,11 +69,10 @@ public class Enemy : MonoBehaviour
     public float radius;
     [Range(0,360)]
     public float angle;
-
     public GameObject playerRef;
-    public GameObject patrolPoint1;
-    public GameObject patrolPoint2;
 
+    public GameObject growlAudio;
+    public GameObject capturedAudio;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
     NavMeshAgent agent;
@@ -111,15 +110,17 @@ public class Enemy : MonoBehaviour
                 // Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
                 // Transform target = rangeChecks[0].transform;
 
-                this.GetComponent<EnemyPatrol_classroom>().enabled = false;//disable patrol script
+                this.GetComponent<EnemyPatrol_Classroom>().enabled = false;//disable patrol script
+                GetComponent<AudioSource>().mute = true;
+                growlAudio.GetComponent<AudioSource>().mute = false;//enable growl sound
+
                 Transform target = playerRef.transform;
                 FaceTargetAndChase(target);
+                //break;
             } else {
                 Start();
                 break;
             }
-
-            yield return wait;
         }
     }
 
@@ -160,12 +161,27 @@ public class Enemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
-        float distance = Vector3.Distance(target.position, transform.position);
-        if(distance<=0.38){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        // WaitForSeconds wait = new WaitForSeconds(1.5f);
 
-        agent.SetDestination(target.position);
+        //while(true){
+            //yield return wait;
+
+            float distance = Vector3.Distance(target.position, transform.position);
+        if(distance<=0.50){
+
+            growlAudio.GetComponent<AudioSource>().mute = true;//disable growl sound
+            capturedAudio.GetComponent<AudioSource>().mute = false;//enable captured sound
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
+            //yield return new WaitForSeconds(1);
+        } else {
+            agent.SetDestination(target.position);
+        }
+            
+        //}
+        
+
+        
 
         // float distance = Vector3.Distance(target.position, transform.position);
         // while(distance>=0.2f){

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44050002, g: 0.4891106, b: 0.56926274, a: 1}
+  m_IndirectSpecularColor: {r: 0.44048592, g: 0.4890924, b: 0.5692451, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5154,13 +5154,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861508045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.81, y: 6.359, z: 1.68}
+  m_LocalRotation: {x: 0.21519569, y: -0, z: -0, w: 0.976571}
+  m_LocalPosition: {x: -5.81, y: 6.678, z: 1.215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 63
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.854, y: 0, z: 0}
 --- !u!1 &861816567
 GameObject:
   m_ObjectHideFlags: 0
@@ -9727,9 +9727,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 9
   angle: 110
-  playerRef: {fileID: 0}
-  patrolPoint1: {fileID: 0}
-  patrolPoint2: {fileID: 0}
+  playerRef: {fileID: 492916335}
+  patrolPoint1: {fileID: 589847478}
+  patrolPoint2: {fileID: 1310567}
   targetMask:
     serializedVersion: 2
     m_Bits: 128
