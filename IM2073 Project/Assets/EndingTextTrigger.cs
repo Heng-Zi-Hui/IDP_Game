@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class EndingTextTrigger : MonoBehaviour
 {
+    public Dialogue dialogue;
     public GameObject uiObject;
     public GameObject dialogueObject;
+
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,17 +25,18 @@ public class EndingTextTrigger : MonoBehaviour
     {
         if (player.gameObject.tag == "Player")
         {
+            TriggerDialogue();
             uiObject.SetActive(true);
             dialogueObject.SetActive(true);
             StartCoroutine("WaitForSec");
         }
     }
-
+    
     IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(3);
-        Destroy(uiObject);
-        Destroy(dialogueObject);
+        yield return new WaitForSeconds(1);
+        //Destroy(uiObject);
+        //Destroy(dialogueObject);
         Destroy(gameObject);
     }
 }
