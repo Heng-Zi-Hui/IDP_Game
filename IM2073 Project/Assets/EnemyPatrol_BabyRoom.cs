@@ -7,7 +7,7 @@ public class EnemyPatrol_BabyRoom : MonoBehaviour
 {
 
     public GameObject patrolPoint1;
-    public GameObject patrolPoint2;
+    //public GameObject patrolPoint2;
 
     public GameObject crySound;
     public GameObject crySound1;
@@ -47,12 +47,12 @@ public class EnemyPatrol_BabyRoom : MonoBehaviour
         crySound.GetComponent<AudioSource>().Pause();
         crySound1.GetComponent<AudioSource>().Pause();
         crySound2.GetComponent<AudioSource>().Pause();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
-        Transform point2 = patrolPoint2.transform;
-        agent.SetDestination(point2.position);
+        //Transform point2 = patrolPoint2.transform;
+        //agent.SetDestination(point2.position);
         enemy.GetComponent<EnemyPatrol_Classroom>().enabled = true;
-
+        enemy.GetComponent<EnemyPatrol_Classroom>().Init();
 
         this.enabled = false;
 

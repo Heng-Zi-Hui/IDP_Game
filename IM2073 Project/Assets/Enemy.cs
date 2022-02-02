@@ -81,22 +81,15 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        Init();
+    }
+
+    public void Init(){
         playerRef = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(FOVRoutine());
     }
-
-    // void Update(){
-
-    //     //patrol
-    //     Transform point1 = patrolPoint1.transform;
-    //     agent.SetDestination(point1.position);
-
-    //     Transform point2 = patrolPoint2.transform;
-    //     agent.SetDestination(point2.position);
-
-    // }
 
     private IEnumerator FOVRoutine()
     {

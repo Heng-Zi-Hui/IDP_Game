@@ -4222,6 +4222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 585102682}
   playerRef: {fileID: 837132712}
+  enemy: {fileID: 1396697723}
 --- !u!1001 &1288425510
 PrefabInstance:
   m_ObjectHideFlags: 0
