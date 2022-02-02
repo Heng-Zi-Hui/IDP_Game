@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> name;
     private Queue<string> sentences;
 
+    //public gameObject enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +53,20 @@ public class DialogueManager : MonoBehaviour
         string charaName = name.Dequeue();
         nameText.text = charaName;
         dialogueText.text = sentence;
+
+        /*if(sentences.count == 7)
+        {
+            nannyAppearance();
+        }*/
     }
 
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
     }
+
+    /*public void nannyAppearance()
+    {
+        
+    }*/
 }
