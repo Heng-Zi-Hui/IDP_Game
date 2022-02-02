@@ -151,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 66418502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8359, y: 0.86871064, z: 1}
+  m_LocalScale: {x: 2.4553325, y: 1.3540592, z: 1}
   m_Children:
   - {fileID: 257389781}
   - {fileID: 687555262}
@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 112}
+  m_AnchoredPosition: {x: -2, y: 132}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &66418504
@@ -895,14 +895,14 @@ RectTransform:
   m_GameObject: {fileID: 257389780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54469204, y: 1.1511313, z: 1}
+  m_LocalScale: {x: 0.4072768, y: 0.7385202, z: 1}
   m_Children: []
   m_Father: {fileID: 66418503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3421936, y: 21.756376}
+  m_AnchoredPosition: {x: -7.901162, y: 32.347183}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257389782
@@ -932,7 +932,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 186
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1306,7 +1306,7 @@ RectTransform:
   m_GameObject: {fileID: 436941937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.17802571, y: 0.5992, z: 1}
+  m_LocalScale: {x: 0.1331133, y: 0.38442296, z: 1}
   m_Children:
   - {fileID: 1713276674}
   m_Father: {fileID: 66418503}
@@ -1314,7 +1314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.099964, y: -38.4}
+  m_AnchoredPosition: {x: 34.251984, y: -39.406334}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436941939
@@ -1680,14 +1680,14 @@ RectTransform:
   m_GameObject: {fileID: 687555261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54469204, y: 1.1511313, z: 1}
+  m_LocalScale: {x: 0.50746924, y: 0.7385202, z: 1}
   m_Children: []
   m_Father: {fileID: 66418503}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.900013, y: -3.6}
+  m_AnchoredPosition: {x: 0.12218082, y: 10.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &687555263
@@ -1714,14 +1714,14 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
     m_FontStyle: 1
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 18
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Enter Dialogue Text Here
 --- !u!222 &687555264
@@ -2087,17 +2087,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Test
+    name:
+    - Asa
+    - Asa
+    - Mom
+    - Mom
+    - Mom
+    - Nanny
+    - Nanny
+    - Nanny
+    - Nanny
+    - Nanny
+    - Dad
+    - Dad
     sentences:
-    - 'Line 1 here!!!
+    - 'Mom! Dad!
 
-      hihi'
-    - 'Line 2 here!!!
-
-      Is it working?'
-    - 'Line 3 here!!!
-
-      Thats cool!!'
+      Don''t leave me!!'
+    - I want to go home!
+    - Asa? What's wrong? What are you doing out here?
+    - Did you run out of the daycare center?
+    - Hey Nanny! Whats the meaning of this!?
+    - My apologies Asa's parents.
+    - 'It seems that Asa really misses you '
+    - and tried to run away from the daycare.
+    - I think it would be better to bring her home now.
+    - Bye Asa and parents, take care.
+    - "Asa, it's ok, don't cry. \nWe are here now."
+    - Let's go home.
   uiObject: {fileID: 66418502}
   dialogueObject: {fileID: 687555261}
 --- !u!1 &1146015220
