@@ -21,22 +21,22 @@ public class EndingTextTrigger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider player)
+    void OnTriggerEnter(Collider player) //triggered when player collides with the gameObject
     {
         if (player.gameObject.tag == "Player")
         {
-            TriggerDialogue();
-            uiObject.SetActive(true);
-            dialogueObject.SetActive(true);
-            StartCoroutine("WaitForSec");
+            TriggerDialogue(); //Display dialogue
+            uiObject.SetActive(true); //show dialogue box
+            dialogueObject.SetActive(true); //show dialogues
+            StartCoroutine("WaitForSec"); //count down
         }
     }
     
     IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1); //count down
         //Destroy(uiObject);
         //Destroy(dialogueObject);
-        Destroy(gameObject);
+        Destroy(gameObject); //destroys the gameObject
     }
 }
