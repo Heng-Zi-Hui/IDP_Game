@@ -14,7 +14,6 @@ public class EnemyPatrol_Classroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playerRef = GameObject.FindGameObjectWithTag("patrolPoint1");
         agent = GetComponent<NavMeshAgent>();
         Transform point1 = patrolPoint1.transform;
         agent.SetDestination(point1.position);
