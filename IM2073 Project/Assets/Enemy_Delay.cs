@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Delay : MonoBehaviour
 {
 
+    public int seconds;
     public GameObject enemy;
 
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class Enemy_Delay : MonoBehaviour
 
     IEnumerator Coroutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         enemy.SetActive(true);
     }
 
