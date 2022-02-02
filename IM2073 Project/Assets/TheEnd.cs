@@ -13,7 +13,7 @@ public class TheEnd : MonoBehaviour
 
     IEnumerator Coroutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6);
         SceneManager.LoadScene("Main Menu");
     }
 
