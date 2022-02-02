@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> name;
     private Queue<string> sentences;
 
-    //public gameObject enemy;
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class DialogueManager : MonoBehaviour
         if(sentences.Count == 0)
         {
             EndDialogue();
+            SceneManager.LoadScene("End Game");
             return;
         }
 
@@ -54,10 +56,10 @@ public class DialogueManager : MonoBehaviour
         nameText.text = charaName;
         dialogueText.text = sentence;
 
-        /*if(sentences.count == 7)
+        if(sentences.Count == 6)
         {
             nannyAppearance();
-        }*/
+        }
     }
 
     void EndDialogue()
@@ -65,8 +67,8 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
     }
 
-    /*public void nannyAppearance()
+    public void nannyAppearance()
     {
-        
-    }*/
+        enemy.GetComponent<Enemy_LastScene>().appearAndMove();
+    }
 }
