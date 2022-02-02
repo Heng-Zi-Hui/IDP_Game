@@ -34,8 +34,14 @@ public class ToyTrigger : MonoBehaviour
         yield return new WaitForSeconds(2);
         // enemy walks to beds
         enemy.GetComponent<EnemyPatrol_Classroom>().enabled = false;
-        enemy.GetComponent<EnemyPatrol_BabyRoom>().enabled = true;
+        if (enemy.GetComponent<EnemyPatrol_BabyRoom>().enabled){
+            enemy.GetComponent<EnemyPatrol_BabyRoom>().enabled = true;
+            enemy.GetComponent<EnemyPatrol_BabyRoom>().Init();
+        } else {
+            enemy.GetComponent<EnemyPatrol_BabyRoom>().enabled = true;
     }
+        }
+        
 
     // Update is called once per frame
     void Update()
