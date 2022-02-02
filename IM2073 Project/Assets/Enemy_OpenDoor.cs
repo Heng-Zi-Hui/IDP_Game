@@ -11,7 +11,7 @@ public class Enemy_OpenDoor : MonoBehaviour
 
         if(other.CompareTag("Enemy")){
             gameObject.GetComponent<AudioSource>().Play(); //play openDoor sound
-            Destroy(gameObject);
+            
         }
 
     }

@@ -3208,6 +3208,7 @@ GameObject:
   - component: {fileID: 1168900246}
   - component: {fileID: 1168900245}
   - component: {fileID: 1168900248}
+  - component: {fileID: 1168900249}
   m_Layer: 0
   m_Name: cube
   m_TagString: Untagged
@@ -3450,6 +3451,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1168900249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168900243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5089c60706b834e8006111d0c3a9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1171090721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8525559021578932743, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
+  m_PrefabInstance: {fileID: 2126527676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1171090724
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171090721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1179095194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4376,6 +4408,7 @@ GameObject:
   - component: {fileID: 1401584088}
   - component: {fileID: 1401584087}
   - component: {fileID: 1401584090}
+  - component: {fileID: 1401584091}
   m_Layer: 0
   m_Name: cube (1)
   m_TagString: Untagged
@@ -4618,6 +4651,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1401584091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401584085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5089c60706b834e8006111d0c3a9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1407465727
 GameObject:
   m_ObjectHideFlags: 0
@@ -7436,6 +7481,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7bea297b5abdd57408ae9825ecb7d025, type: 3}
   m_PrefabInstance: {fileID: 1456608740}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2123526792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8293510266498974470, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
+  m_PrefabInstance: {fileID: 2126527676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2123526794
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123526792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &2126527676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7510,6 +7574,14 @@ PrefabInstance:
     - target: {fileID: -8525559021578932743, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8525559021578932743, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8525559021578932743, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: -8026306917776265072, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
       propertyPath: m_Layer
@@ -7643,6 +7715,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1570355846422162394, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -7746,6 +7822,10 @@ PrefabInstance:
     - target: {fileID: 8293510266498974470, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293510266498974470, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8482637178489366800, guid: 698edb1deb171204799b642aa11a5d1d, type: 3}
       propertyPath: m_Layer
