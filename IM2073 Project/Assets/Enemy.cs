@@ -93,17 +93,17 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator FOVRoutine()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        //WaitForSeconds wait = new WaitForSeconds(0.2f);
 
         while (true)
         {
-            yield return wait;
+            yield return new WaitForSeconds(0.2f);
 
             if (FieldOfViewCheck()){
                 // Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
                 // Transform target = rangeChecks[0].transform;
 
-                this.GetComponent<EnemyPatrol_Classroom>().enabled = false;//disable patrol script
+                //this.GetComponent<EnemyPatrol_Classroom>().enabled = false;//disable patrol script
                 GetComponent<AudioSource>().mute = true;//disable purr sound
                 growlAudio.GetComponent<AudioSource>().mute = false;//enable growl sound
 
