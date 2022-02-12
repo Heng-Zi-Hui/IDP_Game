@@ -18,10 +18,11 @@ public class CollectKey : MonoBehaviour
 
         if(other.CompareTag("Player")){
             
-            gameObject.GetComponent<AudioSource>().Play(); //play collected sound
+            
 
             //enable key above kids head
             collectedKey.SetActive(true);
+            collectedKey.GetComponent<AudioSource>().Play(); //play collected sound
 
             gameObject.SetActive(false);
             //Destroy(gameObject);

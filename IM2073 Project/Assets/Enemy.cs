@@ -177,4 +177,9 @@ public class Enemy : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void spotted(){
+        radius = 50;
+        angle = 360;
+    }
+
 }

@@ -20,8 +20,9 @@ public class OpenLockedDoor : MonoBehaviour
 
     IEnumerator EnemyChase()
     {
-        yield return new WaitForSeconds(1);
-        enemy.GetComponent<Enemy>().angle = 360;
-        enemy.GetComponent<Enemy>().radius = 50;
+        yield return new WaitForSeconds(0);
+        // enemy.GetComponent<Enemy>().angle = 360;
+        // enemy.GetComponent<Enemy>().radius = 50;
+        enemy.GetComponent<Enemy>().spotted();
     }
 }
